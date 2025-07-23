@@ -15,7 +15,7 @@ class HardwareInfo:
         logger.info("Logging hardware information...")
 
         try:
-            motherboard_info = subprocess.check_output("sudo dmidecode -t baseboard", shell=True).decode()
+            motherboard_info = subprocess.check_output("dmidecode -t baseboard", shell=True).decode()
             cpu_info = subprocess.check_output("lscpu", shell=True).decode()
             vga_info = subprocess.check_output("lspci -nn | grep -i vga", shell=True).decode()
             gpu_info = subprocess.check_output("lspci -nn", shell=True).decode()
