@@ -27,6 +27,7 @@ cd gpu-passthrough-setup
 To execute the script:
 
 ```bash
+chmod a+x main.py
 ./main.py
 ```
 
