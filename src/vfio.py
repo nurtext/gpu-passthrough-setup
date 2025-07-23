@@ -6,7 +6,7 @@ class VFIO:
     def ensure_vfio_modules():
         """Ensures VFIO modules are loaded."""
         logger.info("Ensuring VFIO modules are loaded...")
-        required_modules = ["vfio", "vfio_iommu_type1", "vfio_pci"]
+        required_modules = ["vfio", "vfio_iommu_type1", "vfio_mdev", "vfio_pci", "vfio_virqfd", "kvmgt"]
 
         try:
             with open('/etc/modules', 'r') as f:
