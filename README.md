@@ -18,7 +18,7 @@ This project provides a script to facilitate GPU passthrough setup on Proxmox ho
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/pedroanisio/gpu-passthrough-setup.git
+git clone https://github.com/nurtext/gpu-passthrough-setup.git
 cd gpu-passthrough-setup
 ```
 
@@ -27,14 +27,15 @@ cd gpu-passthrough-setup
 To execute the script:
 
 ```bash
-./setup.py
+./main.py
 ```
 
-To perform a dry run:
+## Recommendations
 
-```bash
-./setup.py --dry-run
-```
+When using Intel iGPU passthrough:
+
+1. Install `mdevctl` using `apt install mdevctl` and check if everything is working by using `mdevctl types` or even `mdevctl list`
+2. Install `intel-gpu-tools` using `apt install intel-gpu-tools` and check if iGPU is being used by typing `intel_gpu_top`
 
 ## Configuration Files
 
