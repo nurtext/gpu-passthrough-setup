@@ -24,9 +24,9 @@ class GrubConfig:
         try:
             cpu_info = subprocess.check_output("lscpu", shell=True).decode().lower()
             if "amd" in cpu_info:
-                required_settings = "quiet iommu=pt"
+                required_settings = "quiet iommu=pt video=efifb:off,vesafb:off"
             elif "intel" in cpu_info:
-                required_settings = "quiet intel_iommu=on iommu=pt"
+                required_settings = "quiet intel_iommu=on iommu=pt i915.enable_gvt=1 i915.enable_guc=0 i915.enable_fbc=0 video=efifb:off,vesafb:off"
             else:
                 raise ConfigurationError("Unsupported CPU type. Only AMD and Intel CPUs are supported.")
 
